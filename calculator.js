@@ -1,75 +1,107 @@
 /* global $*/
+/* global accumulate*/
 $(document).ready(function(){
-   
 
-// var one = 1;
-// var two = 2;
-// var three = 3;
-// var four = 4;
-// var five = 5;
-// var six = 6;
-// var seven = 7;
-// var eight = 8;
-// var nine = 9;
-// var plus;
-// var minus;
-// var mult;
-// var div;
-// var display;
-// var clear;
-// var clearAll;
-var display = [];
 
+// function getTotal() {
+    
+//     return total;
+// }
+
+
+// function subtractNumber() 
+// {
+
+// }
+// function multiplyNumber() 
+// {
+
+// }
+// function divideNumber() 
+// {
+
+// }
+
+
+// function getTotal() { 
+//         var total = display.reduce(function(a,b){return a+b});
+//   $('#total').html(total);
+// }
+
+
+    var display = document.getElementById("display").click;
+    $( "button.equal" ).on( "click", function() {
+    document.getElementById("display").innerHTML = runningTotal;
+
+    });  
+    
+    for (var i = 0; i < display.length; i++) {
+        var runningTotal  = 0;
+    //   console.log(display[i]);
+    runningTotal += parseInt(display[i]);
+        // runningTotal = runningTotal + parseInt(display[i]);
+  
+//   console.log(runningTotal);
+  
+  
+        // document.getElementById("display").innerHTML = runningTotal;
+       
+         return runningTotal;
+    } 
+
+    //  $('#total').html(total);
+  
+    
 $( "button.zero" ).on( "click", function() {
         console.log(0);
-        // addKey(key) {
-        //     display.push(key);
-        //     console.log(display);
-        // }
+        
     });
     
 $( "button.one" ).on( "click", function() {
+        document.getElementById("display").innerHTML += (1);
         console.log(1);
     });
     
 $( "button.two" ).on( "click", function() {
+    document.getElementById("display").innerHTML += (2);
         console.log(2);
-    });
-$( "button.three" ).on( "click", function() {
-        console.log(3);
-    }); 
-$( "button.four" ).on( "click", function() {
-        console.log(4);
-    }); 
-$( "button.five" ).on( "click", function() {
-        console.log(5);
-    }); 
-$( "button.six" ).on( "click", function() {
-        console.log(6);
-    }); 
-$( "button.seven" ).on( "click", function() {
-        console.log(7);
-    }); 
-$( "button.eight" ).on( "click", function() {
-        console.log(8);
-    }); 
-$( "button.nine" ).on( "click", function() {
-        console.log(9);
     }); 
 $( "button.add" ).on( "click", function() {
+    document.getElementById("display").innerHTML += ('+=');
         console.log('+');
     }); 
-$( "button.subtract" ).on( "click", function() {
-        console.log('-');
-    }); 
+
 $( "button.multiply" ).on( "click", function() {
-        console.log('*');
+    document.getElementById("display").innerHTML += ('*=');
+        console.log("*");
     }); 
-$( "button.divide" ).on( "click", function() {
-        console.log('/');
-    });     
-$( "button.equal" ).on( "click", function() {
-        console.log('=');
-    });     
+
+}); 
+
+
+// function getSum(total, num) {
+//     return total + num;
+// }
+// function myFunction(item) {
+//     document.getElementById("demo").innerHTML = display.reduce(getSum);
+// }
+
+
+
+
+   
         
-    });    
+
+// function getSum(total, num) {
+//     return total + num;
+         
+    
+
+
+//          var total = display.reduce( function(total, amount) {
+//   return total + amount; 
+//     });    
+    
+//     const reducer = (accumulator, currentValue) => accumulator + currentValue;
+//         console.log(display.reduce(reducer));
+//             return accumulator + currentValue;
