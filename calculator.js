@@ -1,78 +1,116 @@
 /* global $*/
 $(document).ready(function(){
    
-   var pTotal= 0;   
-   document.getElementById("now").onclick = function() {
+  
+  document.getElementById("now").onclick = function() {
     
-    var parse = '12 + 11';
-    for (var i = 0; i <parse.length; i++) {
-    pTotal = pTotal + parseInt(parse[i]);   
-     pTotal = document.getElementById("parsego").innerHTML;
-     console.log(pTotal);
-     return pTotal;
-   }
-   }
+    var parseMe = [12 + 4 * 5];
+     var pTotal= 0;   
+    for (var i = 0; i <parseMe.length; i++) {
+    pTotal = pTotal + parseInt(parseMe[i]);   
+     
+     document.getElementById("addOne").onclick = function() {
+     parseMe.push(1);
+     };
+    // return pTotal;
+  }
+  document.getElementById("pleaseWork").innerHTML = pTotal;
+  console.log(pTotal);
    
-    // var display = document.getElementById("display").click;
-    // $( "button.equal" ).on( "click", function() {
-    document.getElementById("equal").onclick = function() {
-    //console.log("addDigits clicked");
-    //get the sum of the digits from the display field
-    var display = document.getElementById("display").innerHTML;
-    //without = using a getter not a setter
-    // console.log(display);
-    var runningTotal = 0;
-    for (var i = 0; i <display.length; i++) {
-        // console.log(display[i]);
-        // runningTotal += parseInt(display[i]);
-        runningTotal = runningTotal + parseInt(display[i]);
+  };
+//   };
+   
+//     // var display = document.getElementById("display").click;
+//     // $( "button.equal" ).on( "click", function() {
+//     document.getElementById("equal").onclick = function() {
+//     //console.log("addDigits clicked");
+//     //get the sum of the digits from the display field
+//     var display = document.getElementById("display").innerHTML;
+//     //without = using a getter not a setter
+//     // console.log(display);
+//     var runningTotal = 0;
+//     for (var i = 0; i <display.length; i++) {
+//         // console.log(display[i]);
+//         // runningTotal += parseInt(display[i]);
+//         runningTotal = runningTotal + parseInt(display[i]);
         
-    }
-    console.log(runningTotal);
-    document.getElementById("display").innerHTML = runningTotal;
+//     }
+//     console.log(runningTotal);
+//     document.getElementById("display").innerHTML = runningTotal;
 
-};
-
-
-//     for (var i = 0; i < display.length; i++) {
-//         var runningTotal  = 0;
+// };
+//   document.getElementById("now").onclick = function() {
     
-//     runningTotal += parseInt(display[i]);
-//         // runningTotal = runningTotal + parseInt(display[i]);
-  
-// // console.log(runningTotal);
- 
-//         document.getElementById("display").innerHTML = runningTotal;
-//         return runningTotal;
+//     var parseMe = [12 + 4 * 5];
+//      var pTotal= 0;   
+//     for (var i = 0; i <parseMe.length; i++) {
+//     pTotal = pTotal + parseInt(parseMe[i]);   
+     
+//     // return pTotal;
+//   }
+//   document.getElementById("pleaseWork").innerHTML = pTotal;
+//   console.log(pTotal);
+   
+     
+//   };
+var display = [];
+var runningTotal = 0;
+document.getElementById("displayHere").innerHTML = display;
+
+ $( "button.zero" ).on( "click", function() {
         
-// }    });
-
-    //  $('#total').html(total);
-  
-    
-$( "button.zero" ).on( "click", function() {
-        console.log(0);
+        // this.display.push(0);
         
     });
     
 $( "button.one" ).on( "click", function() {
-        document.getElementById("display").innerHTML += (1);
-        console.log(1);
+        // document.getElementById("displayHere").innerHTML += ("1");
+        // display = document.getElementById("two").value;
+        // console.log(1);
+        display.push(1);
     });
     
 $( "button.two" ).on( "click", function() {
-    document.getElementById("display").innerHTML += ("2");
-        console.log(2);
+    // document.getElementById("displayHere").innerHTML += ("2");
+    // display = document.getElementById("two").value;
+        display.push(2);
+        // console.log(display);
+        
     }); 
 $( "button.add" ).on( "click", function() {
-    document.getElementById("display").innerHTML += ("+");
-        console.log('+');
+    // document.getElementById("displayHere").innerHTML += ("+");
+       display = document.getElementById("+").value;
+       display.push('+');
+        //  console.log(this.display);
     }); 
 
 $( "button.multiply" ).on( "click", function() {
-    document.getElementById("display").innerHTML += ("*");
-        console.log("*");
-    }); 
+    document.getElementById("displayHere").innerHTML += ("*");
+        // console.log("*");
+        // display.push('*');
+    });
+
+   document.getElementById("equal").onclick = function() {
+    
+   
+    for (var i = 0; i < display.length; i++) {
+    runningTotal += parseInt(display[i]);
+    
+        // runningTotal = runningTotal + parseInt(display[i]);
+  
+// console.log(runningTotal);
+    }
+        console.log(display);
+        document.getElementById("totalPlease").innerHTML = runningTotal;
+        return runningTotal;
+        
+   
+
+    //  $('#total').html(total);
+  
+    
+
+   };
 
 }); 
 
