@@ -37,8 +37,9 @@
     <title>Calculator</title>
 </head>
 <body>
-    <container>
-       
+    <div class="container">
+ <input type="displayHere" />
+     
 <button class='zero'>0</button>
 <button class='one'>1</button>
 <button class='two'>2</button>
@@ -54,7 +55,18 @@
  <button class='multiply'>*</button>
  <button class='divide'>/</button>
  <button class='equal'>=</button>
-    </container>
+ 
+ <!--<form><input onclick='getTotal()' type='button' value ='='/>-->
+ <!--</form>-->
+ <div id="displayHere"></div>
+ <div id='total'>Total: </div>
+
+<div id='demo'>Demo Total: </div>
+ 
+
+ <p>Click the button to get the sum of the numbers in the array.</p>
+<button onclick="myFunction()">Try it</button>
+    </div>
     
     <script src="https://use.fontawesome.com/d117184189.js">
 	</script> 
