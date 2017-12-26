@@ -38,34 +38,38 @@
 </head>
 <body>
     <div class="container">
- <input type="displayHere" />
-     
-<button class='zero'>0</button>
-<button class='one'>1</button>
-<button class='two'>2</button>
-<button class='three'>3</button>
-<button class='four'>4</button>
-<button class='five'>5</button>
-<button class='six'>6</button>
-<button class='seven'>7</button>
-<button class='eight'>8</button>
-<button class='nine'>9</button>
-<button class='add'>+</button>
-<button class='subtract'>-</button>
- <button class='multiply'>*</button>
- <button class='divide'>/</button>
- <button class='equal'>=</button>
+ <input type="text" id="displayHere" />
+  <div id='equal'>Total:  <span id = "total"></div>
  
- <!--<form><input onclick='getTotal()' type='button' value ='='/>-->
- <!--</form>-->
- <div id="displayHere"></div>
- <div id='total'>Total: </div>
+  <div> <button class='allClear' value='AC' onclick='allClear()'>AC</button>
+   <button class='decimal' value='.' onclick='toDisplay(".")'>.</button>
+   </div>
+   <div>  
+<button class='one' value='1' onclick='toDisplay("1")'>1</button>
+<button class='two' value='2' onclick='toDisplay("2")'>2</button>
+<button class='three' value='3' onclick='toDisplay("3")'>3</button>
+<button class='add' value='+' onclick='toDisplay("+")'>+</button>
+</div>
+<div>
+<button class='four' value='4' onclick='toDisplay("4")'>4</button>
+<button class='five' value='5' onclick='toDisplay("5")'>5</button>
+<button class='six' value='6' onclick='toDisplay("6")'>6</button>
+<button class='subtract' value='-' onclick='toDisplay("-")'>-</button>
+</div>
+<div>
+<button class='seven' value='7' onclick='toDisplay("7")'>7</button>
+<button class='eight' value='8' onclick='toDisplay("8")'>8</button>
+<button class='nine' value='9' onclick='toDisplay("9")'>9</button>
+<button class='multiply' value='*' onclick='toDisplay("*")'>*</button>
+</div>
 
+<div>
+<button class='clear' onclick='clearLast()'>C</button>
+<button class='equal' value='=' onclick='equal()'>=</button>
+ <button class='zero' value='0' onclick='toDisplay("0")'>0</button>
+ <button class='divide' value='/' onclick='toDisplay("/")'>/</button>
+ </div>
 
- <!--<form><input onclick='getTotal()' type='button' value ='='/>-->
- <!--</form>-->
- 
- <div id='totalPlease'>Total: </div>
 
     
     <script src="https://use.fontawesome.com/d117184189.js">

@@ -1,53 +1,102 @@
 /* global $*/
-$(document).ready(function(){
+// $(document).ready(function(){
 
-var number;
-var display = "";
-display = document.getElementById("displayHere").innerHTML;
-var total= $("#total");
-    total.text("0");
-// function getTotal() { 
-        
-//         var total = display.reduce(function(a,b){return a+b});
-//   $('#total').html(total);
-// }
-    //  $('#total').html(total);
+
+var total= 0;
+var display = [""]
+// display = document.getElementById("displayHere"); 
+
+function clearLast() {
+    // for(var i = 0; i<display.length; i++);
+    // {
+   display = display.substring(0,display.length-1);
+   console.log(display);
+   $("#displayHere").html(display)
+   
+    // display = display.slice(0, -1);
+    // document.getElementById("displayHere").innerHTML = display;
+   
+    // var removeOne = display;
+    // var len = removeOne.length-1;
+    // var newDisplay = removeOne.substring(0,len);
+    // display = newDisplay;
     
-    $( "button.equal" ).on( "click", function () {
-        console.log('display');
-    for (var i = 0; i <display.length; i++) {
-    total += parseInt(display[i]);
+    // display = removeOne;
+    //  document.getElementById("displayHere").innerHTML = display;
+     
+ }   
+ 
+function toDisplay(val) {
+          display = document.getElementById("displayHere").value+=val;
+     }
+ 
+ 
+ 
+ 
+function allClear() {
+          document.getElementById("displayHere").value = "";
+         
+     }
+  
+  function equal() {
+      
+      $("#total").html(eval(display));
+      return total;
+  
+//  for (var i = 0; i < display.length; i++) {
+// total = total + parseInt(display[i]);
+// console.log(total);
+//     }
     
-    total = document.getElementById('total').innerHTML;
-    return total;
-    }
+//     return total;
+//     document.getElementById('total').innerHTML = total;
+//     console.log(total);
     
-    // total = document.getElementById('total').innerHTML;
-    // return total;
+//     })
+      
+  }
+// });  
+
+
+  
+//     for (var i = 0; i <display.length; i++) {
+//     total = total + parseInt(display[i], 10);
+//     console.log(display);
+//   return total;
+//     }
+//     document.getElementById('total').innerHTML = total;
+//     console.log(total);
     
-    });
+//     });
+ 
+ 
+//     $( "button.equal" ).on( "click", function () {
+  
+//     for (var i = 0; i <display.length; i++) {
+//     total = total + parseInt(display[i], 10);
+//     console.log(display);
+//   return total;
+//     }
+//     document.getElementById('total').innerHTML = total;
+//     console.log(total);
     
+//     });
     
-$( "button.zero" ).on( "click", function() {
-        console.log(0);
-        // addKey(key) {
-        //     display.push(key);
-        //     console.log(display);
-        // }
-    });
+
+
     
-$( "button.one" ).on( "click", function() {
-        // display.push(1);
-        display ++;
-    document.getElementById("displayHere").innerHTML += 1;
+// $( "button.zero" ).on( "click", function() {
+//         console.log(0);
+//     });
     
-    });
+// $( "button.one" ).on( "click", function() {
+//       display = document.getElementById("displayHere").innerHTML += 1;
+//     });  
     
-$( "button.two" ).on( "click", function() {
-        // display.push(2);
-        display ++;
-         document.getElementById("displayHere").innerHTML += 2;
-    });
+// $( "button.two" ).on( "click", function() {
+//         // display.push(2);
+//         display = document.getElementById("displayHere").innerHTML += 2;
+//     });
 // $( "button.three" ).on( "click", function() {
 //         display.push(3);
 //     }); 
@@ -69,28 +118,23 @@ $( "button.two" ).on( "click", function() {
 // $( "button.nine" ).on( "click", function() {
 //         console.log(9);
 //     }); 
-$( "button.add" ).on( "click", function() {
-display ++;
-        document.getElementById("displayHere").innerHTML += ("+");
+// $( "button.add" ).on( "click", function() {
+// display = document.getElementById("displayHere").innerHTML += "+";
 
-    }); 
-$( "button.subtract" ).on( "click", function() {
-        console.log('-');
+//     }); 
+// $( "button.subtract" ).on( "click", function() {
+//         console.log('-');
 
-      });
-   
-
-$( "button.multiply" ).on( "click", function() {
-        console.log('*');
-    }); 
-$( "button.divide" ).on( "click", function() {
-        console.log('/');
-    });
-$( "button.decimal" ).on( "click", function() {
-        console.log('.');
-    });    
-    
-
-});
-
-
+//       });
+ 
+// $( "button.multiply" ).on( "click", function() {
+//         // display ++;
+//         document.getElementById("displayHere").innerHTML += ("*");
+//         console.log('*');
+//     }); 
+// $( "button.divide" ).on( "click", function() {
+//         console.log('/');
+//     });
+// $( "button.decimal" ).on( "click", function() {
+//         console.log('.');
+//     });    
