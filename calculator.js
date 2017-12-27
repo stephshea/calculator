@@ -21,6 +21,7 @@ function allClear() {
 }
 
 function equal() {
+     //calculations current using eval, will remove eval and add own functions
 	$("#total").html(eval(display));
 	return total;
 }
