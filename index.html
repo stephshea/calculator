@@ -9,74 +9,61 @@
 	<meta content="ie=edge" http-equiv="X-UA-Compatible">
 	<link href="calculator.css" rel="stylesheet">
 	<style>
-		@media screen and (max-width: 420px) 
-		{
+	       @media screen and (max-width: 420px) 
+	       {
 
-			#calculator {
-				width: 360px;
-			}
+	           #calculator {
+	               width: 360px;
+	           }
 
-			#displayHere {
-				font-size: 1.5em;
-				margin: .5em 0;
-			}
+	           #displayHere {
+	               font-size: 1.5em;
+	               margin: .5em 0;
+	           }
 
-			#totalHeading {
-				font-size: 1.5em;
-			}
-			.key, .opp, .equal, .clear {
-				font-size: 1.5em; 
-				width: 2em;
-				height: 2em;
-			}
-		}
+	           #totalHeading {
+	               font-size: 1.5em;
+	           }
+	           .key, .opp, .equal, .clear {
+	               font-size: 1.5em; 
+	               width: 2em;
+	               height: 2em;
+	           }
+	       }
 	</style>
 	<title>Calculator</title>
 </head>
 <body>
 	<div class="container">
-		<div id="calculator">
-			<input id="displayHere" type="text">
+		<form id="calculator" name="calculator">
+			<input class="text-right" id="displayHere" type="text" value="0">
 			<div id='totalHeading'>
 				Total: <span id="total"></span>
 			</div>
 			<div>
-				<button class='clear' onclick='allClear()' value='AC'>AC</button>
-				<button class='clear' onclick='clearLast()' value='C'>C</button>
+				<input class='clear' onclick='allClear()' type='button' value='AC'> <input class='clear' onclick='clearEntry()' type='button' value='C'>
 			</div>
 			<div>
-				<button class='key' onclick='toDisplay("1")' value='1'>1</button>
-				<button class='key' onclick='toDisplay("2")' value='2'>2</button> 
-				<button class='key' onclick='toDisplay("3")' value='3'>3</button> 
-				<button class='opp' onclick='toDisplay("+")' value='+'>+</button>
+				<input class='key' onclick='addNumber("1")' type='button' value='1'> <input class='key' onclick='addNumber("2")' type='button' value='2'> <input class='key' onclick='addNumber("3")' type='button' value='3'> <input class="operator" onclick="operation('+')" type="button" value="+">
 			</div>
 			<div>
-				<button class='key' onclick='toDisplay("4")' value='4'>4</button> 
-				<button class='key' onclick='toDisplay("5")' value='5'>5</button> 
-				<button class='key' onclick='toDisplay("6")' value='6'>6</button> 
-				<button class='opp' onclick='toDisplay("-")' value='-'>-</button>
+				<input class='key' onclick='addNumber("4")' type='button' value='4'> <input class='key' onclick='addNumber("5")' type='button' value='5'> <input class='key' onclick='addNumber("6")' type='button' value='6'> <input class='operator' onclick='operation("-")' type="button" value='-'>
 			</div>
 			<div>
-				<button class='key' onclick='toDisplay("7")' value='7'>7</button>
-				<button class='key' onclick='toDisplay("8")' value='8'>8</button> 
-				<button class='key' onclick='toDisplay("9")' value='9'>9</button> 
-				<button class='opp' onclick='toDisplay("*")' value='*'>*</button>
+				<input class='key' onclick='addNumber("7")' type='button' value='7'> <input class='key' onclick='addNumber("8")' type='button' value='8'> <input class='key' onclick='addNumber("9")' type='button' value='9'> <input class='operator' onclick='operation("*")' type="button" value='*'>
 			</div>
 			<div>
-				<button class='key' onclick='toDisplay("0")' value='0'>0</button>
-				<button class='key' onclick='toDisplay(".")' value='.'>.</button> 
-				<button class='equal' onclick='equal()' value='='>=</button>
-				<button class='opp' onclick='toDisplay("/")' value='/'>/</button>
+				<input class='key' onclick='addNumber("0")' type='button' value='0'> <input class='key' onclick='addNumber(".")' type='button' value='.'> <input id='equal' onclick='equals()' type='button' value='='> <input class='operator' onclick='operation("/")' type="button" value='/'>
 			</div>
-		</div>
-		<script src="https://use.fontawesome.com/d117184189.js">
-		</script> 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-		</script> 
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-		</script> 
-		<script src="calculator.js">
-		</script>
+		</form>
 	</div>
+	<script src="https://use.fontawesome.com/d117184189.js">
+	</script> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	</script> 
+	<script src="calculator.js">
+	</script> 
 </body>
 </html>

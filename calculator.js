@@ -1,50 +1,73 @@
-/* global $*/
-//$(document).ready(function(){
-var total = 0;
-var display = "";
+/*global $*/
+// $(document).ready(function(){
+// console.log("linked");
+var displayHere = "";
+// displayHere = $("#displayHere");
+displayHere = document.getElementById("displayHere");
+var storedNum = '';
+var currentNum = '';
+var operator = '';
+var runningTotal = '';
 
-function toDisplay(val) {
-	display = document.getElementById("displayHere").value += val;
+function addNumber(abby) {
+	console.log("click");
+	currentNum += abby;
+	displayHere.value = currentNum;
+	console.log(displayHere);
 }
 
-function clearLast() {
-	display = display.substring(0, display.length - 1);
+function operation(value) {
+	if (storedNum !== "") {
+		equals();
+		operator = value;
+	} else {
+		operator = value;
+		storedNum = currentNum;
+		currentNum = "";
+		displayHere.value = storedNum;
+	}
+	console.log(storedNum, operator);
+}
+// $("#operator").click(function() {
+// currentNum += $(this).text();	
+// currentNum = storedNum;
+// storedNum = '';
+// display.text("0");
+// });
+function equals() {
+	//operations
+	console.log("equals");
+	if (operator === "+") {
+		runningTotal = parseFloat(storedNum, 10) + parseFloat(currentNum, 10);
+	}
+	if (operator === "-") {
+		runningTotal = parseFloat(storedNum, 10) - parseFloat(currentNum, 10);
+	}
+	if (operator === "*") {
+		runningTotal = parseFloat(storedNum, 10) * parseFloat(currentNum, 10);
+	}
+	if (operator === "/") {
+		runningTotal = parseFloat(storedNum, 10) / parseFloat(currentNum, 10);
+	}
+	storedNum = runningTotal;
+	currentNum = "";
+	operator = "";
+	displayHere.value = runningTotal;
+}
+
+function clearEntry() {
+	currentNum = '';
+	displayHere.value = runningTotal;
 	//   display = display.replace(/.$/,'');
-	//   $("displayHere").html(display);
-	document.getElementById("displayHere").value = display;
-	//using value rather than innerHTML fixed
+	//  $("displayHere").html(display);
+	// document.getElementById("displayHere").value = displayHere;
+	// 	using value rather than innerHTML fixed
 }
 
 function allClear() {
-	document.getElementById("displayHere").value = "";
-	$("#total").html("");
+	currentNum = '';
+	storedNum = '';
+	runningTotal = '';
+	document.getElementById("displayHere").value = '';
 }
-
-function equal() {
-     //calculations current using eval, will remove eval and add own functions
-	$("#total").html(eval(display));
-	return total;
-}
-//  for (var i = 0; i < display.length; i++) {
-// total = total + parseInt(display[i]);
-// console.log(total);
-//     }
-//     return total;
-//     document.getElementById('total').innerHTML = total;
-//     console.log(total);
-//     })
-// });  
-//     $( "button.equal" ).on( "click", function () {
-//     for (var i = 0; i <display.length; i++) {
-//     total = total + parseInt(display[i], 10);
-//     console.log(display);
-//   return total;
-//     }
-//     document.getElementById('total').innerHTML = total;
-//     console.log(total);
-//     });
-// $( "button.zero" ).on( "click", function() {
-//         console.log(0);
-//     });
-// $( "button.add" ).on( "click", function() {
-// display = document.getElementById("displayHere").innerHTML += "+";
+// });
